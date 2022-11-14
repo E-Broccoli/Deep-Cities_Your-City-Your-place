@@ -1,1 +1,2 @@
-# Deep-Cities_Your-City-Your-place
+# Your-City-Your-Place---Firenze
+Deep Cities Project Crowdsourcing App for the Florence Case Study 
