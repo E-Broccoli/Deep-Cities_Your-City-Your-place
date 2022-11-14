@@ -1,85 +1,54 @@
 <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <!-- Modal header -->
-      <div class="modal-header">
-        <h3>Come condividere il tuo ricordo</h3>
-      </div>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal header -->
+          <div class="modal-header">
+            <h3>How to share your story</h3>
+          </div>
 
-      <!-- Step 1 of the tutorial -->
-      <div id="0" class="modal-body" style="display:none">
-        <p style="text-align: justify;">
-          Questa applicazione consente di raccogliere esperienze attuali e ricordi passati relativi all'area di San Donato - Novoli, Firenze.
-        </p>
-        <p style="text-align: justify;">
-          Ti verrà presentata una mappa dell'area. Se riconosci un luogo o un edificio per te significativo, fai clic su di esso. Verrà aggiunto un indicatore alla mappa.
-        </p>
+          <!-- Step 1 of the tutorial -->
+          <div id="0" class="modal-body" style="display:none">
             <p style="text-align: justify;">
-              Se hai aggiunto l'indicatore nel posto sbagliato per errore, non preoccuparti, puoi spostarlo facendo clic su di esso.
-               </p>
-            <img src="https://blog.micropasts.org/wp-content/uploads/2021/09/tut1-e1630514890178.jpg" />
-        </div>
-
-        <!-- Step 2 of the tutorial -->
-        <div id="1" class="modal-body" style="display:none">
-          <p style="text-align: justify;">
-            Per favore indica il tuo legame con l'area di San Donato - Novoli selezionando uno dei tag suggeriti, oppure utilizzando la casella sottostante se nessuno di essi lo descrive.
-          <p style="text-align: justify;">
-            Quindi, usa la Memory Box per condividere la tua storia. Innanzitutto, digita il nome del luogo/edificio, se lo conosci, e una data indicativa o più date (ad esempio "1980" o "Estate 2015") associate alla tua esperienza. Infine, scrivi perché quel luogo è importante per te.
-            <p>
-              <img src="https://blog.micropasts.org/wp-content/uploads/2021/08/tutorial2-e1628714096513.jpg" />
+              This application collects current experiences and past memories related to the shown urban area.
             </p>
-          </div>
-
-          <!-- Step 3 of the tutorial -->
-          <div id="2" class="modal-body" style="display:none">
             <p style="text-align: justify;">
-              Infine, premi il pulsante verde "Salva il luogo e i tuoi ricordi" per inviare la tua storia!
-              <p>
-                <img src="https://blog.micropasts.org/wp-content/uploads/2021/07/submit-e1626898527956.png" />
-              </p>
-              <p style="text-align: justify;">
-                Contattaci all'indirizzo deepcitiesapp@gmail.com se hai commenti o domande sull'app o sul nostro progetto.
+              You will be presented with a map of the area. If you recognize a location or building that is significant to you, just click on it. A marker will be added to the map.
+            </p>
+                <p style="text-align: justify;">
+                  If you've added the marker in the wrong place by mistake, don't worry, you can move the marker by clicking on it.
+                   </p>
+                <img src="https://blog.micropasts.org/wp-content/uploads/2021/08/tutorial1-e1628713558237.jpg" />
               </p>
             </div>
-            <!-- End of stepped modal body -->
 
-            <!-- Modal footer -->
-            <div class="modal-footer">
-              <a id="prevBtn" href="#" onclick="showStep('prev')" class="btn btn-default">Previous</a>
-              <a id="nextBtn" href="#" onclick="showStep('next')" class="btn btn-success">Next</a>
-              <a id="startContrib" data-dismiss="modal" href="../urban/newtask" class="btn btn-primary"
-              style="display:none"/><i class="glyphicon glyphicon-thumbs-up"></i> Let's start!</a>
+            <!-- Step 2 of the tutorial -->
+            <div id="1" class="modal-body" style="display:none">
+              <p style="text-align: justify;">
+                Please describe your connection with the area by selecting one of the tags suggested, or use the box below if none of them fit.
+              <p style="text-align: justify;">
+                Then, use the Memory Box to share your story. First, type the name of the place/building if you know it, and a broad date or dates (for example "1980s" or "Summer 2015") associated with your experience. Then, tell us why that place is significant to you.
+                <p>
+                  <img src="https://blog.micropasts.org/wp-content/uploads/2021/08/tutorial2-e1628714096513.jpg" />
+                </p>
+              </div>
+
+              <!-- Step 3 of the tutorial -->
+              <div id="2" class="modal-body" style="display:none">
+                <p style="text-align: justify;">
+                  Finally, press the green button "Save the place and your memories" to submit your story!
+                  <p>
+                    <img src="https://blog.micropasts.org/wp-content/uploads/2021/07/submit-e1626898527956.png" />
+                  </p>
+                </div>
+                <!-- End of stepped modal body -->
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <a id="prevBtn" href="#" onclick="showStep('prev')" class="btn btn-default">Previous</a>
+                  <a id="nextBtn" href="#" onclick="showStep('next')" class="btn btn-success">Next</a>
+                  <a id="startContrib" data-dismiss="modal" href="../urban/newtask" class="btn btn-primary"
+                  style="display:none"/><i class="glyphicon glyphicon-thumbs-up"></i> Let's start!</a>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-
-
-      <script type="text/javascript">
-        var step = -1;
-        function showStep(action) {
-          $("#" + step).hide();
-          if (action == 'next') {
-            step = step + 1;
-          }
-          if (action == 'prev') {
-            step = step - 1;
-          }
-          if (step == 0) {
-            $("#prevBtn").hide();
-            $("#nextBtn").show();
-          }
-          else {
-            $("#prevBtn").show();
-          }
-          if (step == 2 ) {
-            $("#nextBtn").hide();
-            $("#prevBtn").show();
-            $("#startContrib").show();
-          }
-          $("#" + step).show();
-        }
-        showStep('next');
-        $("#myModal").modal('show');
-      </script>
